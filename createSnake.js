@@ -2,6 +2,7 @@ import { Snake } from "./snake.js"
 import { size } from "./sources/sizes.js"
 import { moveSnake } from "./moveSnake.js"
 import { PowerSpeed } from "./powerUp.js"
+
 let baseSpeed = 10
 
 let body = document.querySelector("body")
@@ -24,13 +25,19 @@ document.addEventListener("DOMContentLoaded",()=>{
             console.log(serpent)
             let div = document.createElement("div")
             div.id = "snake"
-            div.style.backgroundColor = serpent.color
+            // div.style.backgroundColor = serpent.color
             div.style.height = serpent.height
             div.style.width = serpent.width
-            
+            div.style.backgroundImage = 'url("https://mario.wiki.gallery/images/thumb/3/34/NSMBU_Thwomp_Artwork.png/50px-NSMBU_Thwomp_Artwork.png")';
+            div.style.backgroundRepeat = "no-repeat"
             ground.append(div)
             moveSnake(div,serpent)
-            PowerSpeed(div)
+            // Continuously check for touching
+           setInterval(() => {
+                
+               PowerSpeed(div,serpent)
+            }, 100);  // 
+           
             
             
         }
