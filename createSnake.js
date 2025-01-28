@@ -2,6 +2,7 @@ import { Snake } from "./snake.js"
 import { size } from "./sources/sizes.js"
 import { moveSnake } from "./moveSnake.js"
 import { PowerSpeed } from "./powerUp.js"
+import { enemies } from "./enemies.js"
 
 let baseSpeed = 10
 
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             div.style.backgroundRepeat = "no-repeat"
             ground.append(div)
             moveSnake(div,serpent)
+            enemies()
             // Continuously check for touching
            setInterval(() => {
                 
