@@ -1,5 +1,8 @@
 import { observePosition } from "./observer.js"
 
+// import audio from "./sources/power-up-type-1-230548.mp3"
+let audio = new Audio("./sources/power-up-type-1-230548.mp3");
+
 
 let ground  = document.getElementById("play-ground")
 
@@ -29,6 +32,8 @@ export const PowerSpeed = (snakeDiv,snakeInstance)=>{
     if (isTouching) {
         console.log('The divs are touching!');
          snakeInstance.faster(20)
+         audio.play();
+  
          powerSpeed.remove()
     } else {
         // console.log('The divs are not touching.');
