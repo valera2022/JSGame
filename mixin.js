@@ -6,6 +6,7 @@ export const increaseSpeedAndSize = {
                  this.speed += amount
       },
 
+
       increasedWidth(amount){
            this.width =+ amount
       },

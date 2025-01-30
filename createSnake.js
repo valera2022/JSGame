@@ -21,16 +21,19 @@ document.addEventListener("DOMContentLoaded",()=>{
         const createSnake = async (e) => {
             e.preventDefault()
              let color = e.target.snake.value
-            let serpent =  new Snake(color, baseSpeed, first.heightOne , first.widthOne)
+             let div = document.createElement("div")
+            let serpent =  new Snake(color, baseSpeed, first.heightOne , first.widthOne, div)
             console.log(typeof serpent.color)
             console.log(serpent)
-            let div = document.createElement("div")
+         
             div.id = "snake"
             // div.style.backgroundColor = serpent.color
-            div.style.height = serpent.height
-            div.style.width = serpent.width
+            div.style.height = `${serpent.height}px`
+            div.style.width = `${serpent.width}px`
             div.style.backgroundImage = 'url("https://mario.wiki.gallery/images/thumb/3/34/NSMBU_Thwomp_Artwork.png/50px-NSMBU_Thwomp_Artwork.png")';
             div.style.backgroundRepeat = "no-repeat"
+            div.style.backgroundSize = "100%"
+            
             ground.append(div)
             moveSnake(div,serpent)
             enemies()

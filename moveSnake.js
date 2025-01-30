@@ -57,7 +57,7 @@ export let moveSnake = (div,serpent)=>{
 
         document.addEventListener("keydown",(event)=>{
             event.preventDefault()
-            console.log(event)
+            // console.log(event)
             if(event.key === "ArrowRight"){
             moveRight()
             }

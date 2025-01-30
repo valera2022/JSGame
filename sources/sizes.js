@@ -1,5 +1,5 @@
 
 export const size =[
-    {widthOne:"50px", heightOne:"50px"},
-    {widthTwo:"120px", heightTwo:"120px"}
+    {widthOne:50, heightOne:50},
+    {widthTwo:120, heightTwo:120}
 ]

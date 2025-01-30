@@ -29,13 +29,42 @@ export const PowerSpeed = (snakeDiv,snakeInstance)=>{
           box1Rect.bottom < box2Rect.top || // box1 is above box2
           box1Rect.top > box2Rect.bottom); // box1 is below box2
 
-    if (isTouching) {
+    if (isTouching && powerSpeed.style.top !== "100px" && powerSpeed.style.top !== "600px") {
         console.log('The divs are touching!');
          snakeInstance.faster(20)
          audio.play();
+        powerSpeed.style.position = "absolute"
+         powerSpeed.style.top = "100px"
+    
+
+    } 
+    else if(  powerSpeed.style.top === "100px" && isTouching){
+        audio.play();
+        snakeInstance.increasedWidth(120)
+        snakeInstance.increaseHeight(120)
+        snakeInstance.updateSize()
+        audio.play();
+        powerSpeed.style.top = "600px"
+       
+        // snakeInstance.increaseHeight(120)
+        console.log("bigger power call")
+        
+   }
+
+   else if(  powerSpeed.style.top === "600px" && isTouching){
+    console.log("won")
+    audio.play();
+     alert("You won")
+     return
+      
   
-         powerSpeed.remove()
-    } else {
+   
+   
+    // snakeInstance.increaseHeight(120)
+   
+    
+}
+    else {
         // console.log('The divs are not touching.');
     }
     // observePosition(snake)
