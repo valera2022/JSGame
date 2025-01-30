@@ -54,9 +54,12 @@ export const PowerSpeed = (snakeDiv,snakeInstance)=>{
    else if(  powerSpeed.style.top === "600px" && isTouching){
     console.log("won")
     audio.play();
-     alert("You won")
-     return
-      
+    powerSpeed.remove()
+    alert("You won")
+    
+     
+    
+   
   
    
    
